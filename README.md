@@ -1,6 +1,6 @@
 # prueba-desarrollo -> proyecto carrito
-# **_Preparar_**
-### Previamente contar con:
+# **_Preparar:_**
+### Se requiere contar con:
 
 + Instalar un IDE (Sublime Text or other)
 + [Instalar Git](https://git-scm.com/download/win)
@@ -18,24 +18,44 @@ composer -v
 ### Php version[^1]:
 > [PHP ^8.0.2](https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/)
 
-## **_En marcha_**
-
-# Seguido la clonación:
-# cd xampp/htdocs
-# git clone <url>
-    *para activar Copiar/Pegar Clic Derecho en la ventana -Git Bash -> Options -> Keys -> Ctrl+Shift+Letter
-# Ahora acceder a la carpeta clonada y ejercutar los comandos:
-# composer install
-# npm install
-opcionales:
-# composer require barryvdh/laravel-debugbar --dev
-# composer require yajra/laravel-datatables-oracle
-
-# crear archivo___ .env  __basado en__  .env.example
-# php artisan key:generate
+# **_En marcha:_**
+### Acceder a la carpeta del servidor:
+````
+cd xampp/htdocs
+````
+### Clonar el repositorio[^2]:
+````
+git clone <url>
+````
+    
+### Ahora acceder a la carpeta clonada y ejercutar los comandos:
+````
+composer install
+npm install
+````
+### Verificar la version de Laravel:
+> Laravel Framework 9.43.0
+````
+php artisan --version
+````
+### *Opcionales:*
+````
+composer require barryvdh/laravel-debugbar --dev
+composer require yajra/laravel-datatables-oracle
+````
+### Generar el siguiente archivo[^3]:
+````
+cp .envexample .env
+````
+### Generar Key:
+````
+php artisan key:generate
+````
 
 #ready!
-#npm run dev or npm run build
-#php artisan serve
+> npm run dev or npm run build
+> php artisan serve
 
 [^1]: Es extremadamente importante que sea la misma version.
+[^2]: Si usas Git Bash -> para activar "Copiar/Pegar" clic Derecho en la ventana -Git Bash -> Options -> Keys -> Ctrl+Shift+Letter
+[^3]: Importante completa la configuracion a la base de datos.
