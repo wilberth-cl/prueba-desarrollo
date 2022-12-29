@@ -46,14 +46,14 @@ composer require yajra/laravel-datatables-oracle
 ````
 ### Generar el siguiente archivo[^3]:
 ````
-cp .envexample .env
+copy .env.example .env
 ````
 ### Generar Key:
 ````
 php artisan key:generate
 ````
 
-#ready!
+# ready!
 ````
 npm run dev or npm run build
 ````
@@ -64,4 +64,4 @@ php artisan serve
 
 [^1]: Es extremadamente importante que sea la misma version.
 [^2]: Si usas Git Bash -> para activar "Copiar/Pegar" clic Derecho en la ventana -Git Bash -> Options -> Keys -> Ctrl+Shift+Letter
-[^3]: Importante completa la configuracion a la base de datos.
+[^3]: Importante! completar la configuracion a la base de datos.
