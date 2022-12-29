@@ -1,5 +1,5 @@
 # prueba-desarrollo -> proyecto carrito
-
+## - [X] _Preparar_
 ### Previamente contar con:
 
 + Instalar un IDE (Sublime Text or other)
@@ -17,6 +17,8 @@ composer -v
 ````
 ### Php version[^1]:
 > [PHP ^8.0.2](https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/)
+
+## - [X] _En marcha_
 
 # Seguido la clonación:
 # cd xampp/htdocs
