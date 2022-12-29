@@ -1,4 +1,6 @@
 # prueba-desarrollo -> proyecto carrito
+#
+#
 # **_Preparar:_**
 ### Se requiere contar con:
 
@@ -17,7 +19,8 @@ composer -v
 ````
 ### Php version[^1]:
 > [PHP ^8.0.2](https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/)
-
+#
+#
 # **_En marcha:_**
 ### Acceder a la carpeta del servidor:
 ````
@@ -52,13 +55,28 @@ copy .env.example .env
 ````
 php artisan key:generate
 ````
-
+#
+#
 # ready!
 ````
-npm run dev or npm run build
+npm run dev ó npm run build
 ````
 ````
 php artisan serve
+````
+#
+#
+# **_Empecemos:_**
+### El proyecto contiene dos seeders para comenzar.
+> ProductoSeeder y ClienteSeeder
+### Los cuales se pueden configurar con:
+* La primera vez:
+````
+php artisan migrate --seed
+````
+* otras veces:
+````
+php artisan migrate:fresh --seed
 ````
 
 
