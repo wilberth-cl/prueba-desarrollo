@@ -3,17 +3,18 @@
 ## Previamente contar con:
 ### Instalar un IDE (Sublime Text or other)
 ### [Instalar Git](https://git-scm.com/download/win)
-### Intalar Node.js https://nodejs.org/en/
-### Instalar Composer https://getcomposer.org/doc/00-intro.md#installation-windows
-### Xampp (v3.2.4)
+### [Intalar Node.js](https://nodejs.org/en/)
+### [Instalar Composer](https://getcomposer.org/doc/00-intro.md#installation-windows)
+### [Xampp (v3.2.4)](https://www.apachefriends.org/es/index.html)
 
-# Comprobar versiones:
-# comando:      git -v
-# comando:      php -v
-# comando:      node -v
-# comando:      composer -v
-# comando:      php artisan --version
-
+# Comprobar versiones comandos:
+````
+git -v
+php -v
+node -v
+composer -v
+php artisan --version
+````
 # Laravel Framework 7.9.2
 # PHP 7.4.4
 # v12.16.2
