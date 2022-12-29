@@ -15,7 +15,7 @@ php -v
 node -v
 composer -v
 ````
-### Php version:
+### Php version[^1]:
 > PHP 8.1.10
 
 # Seguido la clonación:
@@ -35,3 +35,5 @@ opcionales:
 #ready!
 #npm run dev or npm run build
 #php artisan serve
+
+[^1]: Es extremadamente importante que sea la misma version.
