@@ -16,13 +16,15 @@ return new class extends Migration
     {
         Schema::create('documentos', function (Blueprint $table) {
             $table->bigIncrements('idcodigo',11);
-            $table->foreignId('idcliente');
+            $table->unsignedBigInteger('idcliente');
             $table->string('razon_social',60);
             $table->string('rfc',15);
             $table->double('subtotal',10,3);
             $table->double('iva',10,3);
             $table->double('total',10,3);
             $table->timestamps();
+
+            $table->foreign('idcliente')->references('idcliente')->on('clientes');
         });
 
         //DB::statement("ALTER TABLE documentos AUTO_INCREMENT = 10000000000;");

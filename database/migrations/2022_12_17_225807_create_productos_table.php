@@ -14,7 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('productos', function (Blueprint $table) {
-            $table->string('idmaterial',20)->primary();
+            $table->string('idmaterial',20)->unique();
+            $table->primary('idmaterial');
             $table->string('descripcion',60);
             $table->string('unidadmedida',10);
             $table->double('precio1',10,3);
