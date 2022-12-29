@@ -2,7 +2,7 @@
 
 ## Previamente contar con:
 ### Instalar un IDE (Sublime Text or other)
-### Instalar Git -> https://git-scm.com/download/win
+### [Instalar Git](https://git-scm.com/download/win)
 ### Intalar Node.js https://nodejs.org/en/
 ### Instalar Composer https://getcomposer.org/doc/00-intro.md#installation-windows
 ### Xampp (v3.2.4)
