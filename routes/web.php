@@ -2,9 +2,10 @@
 
 use App\Http\Controllers\Admin\AdminClienteController;
 use App\Http\Controllers\Admin\AdminProductoController;
+use App\Http\Controllers\Admin\PanelAdminController;
+use App\Http\Controllers\Venta\PanelVentaController;
 use App\Http\Controllers\HomeAdminController;
 use App\Http\Controllers\HomeVentaController;
-use App\Http\Controllers\Venta\PanelVentaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,14 +32,15 @@ Route::get('/add', [PanelVentaController::class,'pruebassold'])->name('add');
     return view('admin.producto_v.index',['prod'=>$prod]);
 }); */
 
-//PANEL-VENTAS
-Route::get('/venta',[HomeVentaController::class,'index'])->name('venta');
-
 //VENTAS
-Route::resource('venta/panel-venta', PanelVentaController::class)->names('venta.panelventa_c');
+Route::get('/venta',[HomeVentaController::class,'index'])->name('venta');
+//PANEL-VENTAS
+Route::resource('venta/panel-venta',PanelVentaController::class)->names('venta.panelventa_c');
 
+//ADMIN
+Route::get('/admin',[HomeAdminController::class,'index'])->name('admin');
 //PANEL-ADMIN
-Route::get('/panel-admin',[HomeAdminController::class,'index'])->name('panel-admin');
+Route::resource('admin/panel-admin',PanelAdminController::class)->names('admin.paneladmin_c');
 
 //PRODUCTOS
 /* Route::get('admin/producto', [AdminProductoController::class.'index']); */
