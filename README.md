@@ -16,7 +16,7 @@ node -v
 composer -v
 ````
 ### Php version[^1]:
-> PHP 8.1.10
+> [PHP ^8.0.2](https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/)
 
 # Seguido la clonación:
 # cd xampp/htdocs
