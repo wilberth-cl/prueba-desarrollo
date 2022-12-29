@@ -14,12 +14,9 @@ git -v
 php -v
 node -v
 composer -v
-php artisan --version
 ````
-# Laravel Framework 7.9.2
-# PHP 7.4.4
-# v12.16.2
-
+### Php version:
+> PHP 8.1.10
 
 # Seguido la clonación:
 # cd xampp/htdocs
