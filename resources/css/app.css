@@ -1,0 +1,32 @@
+body {
+    background-color: skyblue;
+}
+.card-footer {
+    background-color: #ffff;
+}
+
+.thformattable {
+    font-size: 1em;
+    width: 20%;
+}
+
+.thformattablecant {
+    font-size: 1em;
+    width: 1%;
+}
+
+.tdformattable {
+    font-size: .9em;
+}
+
+/*Hide Arrows From Input Number*/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  --moz-appearance: textfield;
+}
