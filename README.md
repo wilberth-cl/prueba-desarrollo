@@ -1,14 +1,14 @@
 # prueba-desarrollo -> proyecto carrito
 
-## Previamente contar con:
-````
-Instalar un IDE (Sublime Text or other)
-[Instalar Git](https://git-scm.com/download/win)
-[Intalar Node.js](https://nodejs.org/en/)
-[Instalar Composer](https://getcomposer.org/doc/00-intro.md#installation-windows)
-[instalar xampp (v3.2.4)](https://www.apachefriends.org/es/index.html)
-````
-# Comprobar versiones comandos:
+### Previamente contar con:
+
++ Instalar un IDE (Sublime Text or other)
++ [Instalar Git](https://git-scm.com/download/win)
++ [Intalar Node.js](https://nodejs.org/en/)
++ [Instalar Composer](https://getcomposer.org/doc/00-intro.md#installation-windows)
++ [instalar xampp (v3.2.4)](https://www.apachefriends.org/es/index.html)
+
+### Comprobar versiones comandos:
 ````
 git -v
 php -v
