@@ -1,5 +1,5 @@
 # prueba-desarrollo -> proyecto carrito
-## - [X] _Preparar_
+## - [x] _Preparar_
 ### Previamente contar con:
 
 + Instalar un IDE (Sublime Text or other)
