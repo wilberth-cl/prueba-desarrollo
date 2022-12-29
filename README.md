@@ -8,7 +8,7 @@
 + [Instalar Composer](https://getcomposer.org/doc/00-intro.md#installation-windows)
 + [instalar xampp (v3.2.4)](https://www.apachefriends.org/es/index.html)
 
-### Comprobar versiones comandos:
+### Comprobar instalación-versiones comandos:
 ````
 git -v
 php -v
