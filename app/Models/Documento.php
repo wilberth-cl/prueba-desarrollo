@@ -7,7 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Documento extends Model
 {
+    protected $fillable=['idcodigo','idcliente','razon_social','rfc','subtotal','iva','total'];
     
+    public function cliente(){
+                                        //key this tabla , key tabla cliente
+        return $this->belongsTo(Cliente::class,'idcliente','idcliente');
+    }
+
+    public function productos(){
+        return $this->belongsToMany(Producto::class,'documentorenglon','idcodigo','idmaterial')->withPivot(['unidadmedida','cantidad','precio1']);
+    }
+
     /**
      * The primary key associated with the table.
      *
@@ -16,13 +26,6 @@ class Documento extends Model
     protected $primaryKey = 'idcodigo';
     
     //use HasFactory;
-
-    protected $fillable=['idcodigo','idcliente','razon_social','rfc','subtotal','iva','total'];
-    
-    public function productos(){
-        return $this->belongsToMany(Producto::class,'documentorenglon','idcodigo','idmaterial')->withPivot(['unidadmedida','cantidad','precio1']);
-    }
-
 
 
 }

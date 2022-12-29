@@ -11,9 +11,10 @@ class Producto extends Model
     protected $fillable=['idmaterial','descripcion','unidadmedida','precio1'];
     
 
-    public function Documentos(){
-        return $this->belongsToMany(Documentos::class,'documentorenglon','idmaterial','idcodigo')->withPivot(['unidadmedida','cantidad','precio1'])->withTimestamps();
-    }
+    /* public function documentos(){
+        return $this->belongsToMany(Documento::class,'documentorenglon','idmaterial','idcodigo')->withPivot('unidadmedida','cantidad','precio1');
+    } */
+     
 
     /**
      * The primary key associated with the table.
