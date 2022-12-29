@@ -34,10 +34,11 @@ composer install
 npm install
 ````
 ### Verificar la version de Laravel:
-> Laravel Framework 9.43.0
 ````
 php artisan --version
 ````
+> Laravel Framework 9.43.0
+
 ### *Opcionales:*
 ````
 composer require barryvdh/laravel-debugbar --dev
@@ -53,8 +54,13 @@ php artisan key:generate
 ````
 
 #ready!
-> npm run dev or npm run build
-> php artisan serve
+````
+npm run dev or npm run build
+````
+````
+php artisan serve
+````
+
 
 [^1]: Es extremadamente importante que sea la misma version.
 [^2]: Si usas Git Bash -> para activar "Copiar/Pegar" clic Derecho en la ventana -Git Bash -> Options -> Keys -> Ctrl+Shift+Letter
