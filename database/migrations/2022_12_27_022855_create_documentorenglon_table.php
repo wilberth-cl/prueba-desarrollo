@@ -16,6 +16,11 @@ return new class extends Migration
         Schema::create('documentorenglon', function (Blueprint $table) {
             $table->unsignedBigInteger('idcodigo');
             $table->string('idmaterial');
+
+            $table->string('unidadmedida',10);
+            $table->double('cantidad',10,3);
+            $table->double('precio1',10,3);
+            
             $table->timestamps();
             $table->foreign('idcodigo')->references('idcodigo')->on('documentos');
             $table->foreign('idmaterial')->references('idmaterial')->on('productos');

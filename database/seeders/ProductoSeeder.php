@@ -75,7 +75,7 @@ class ProductoSeeder extends Seeder
         $producto8->idmaterial = "MCTUBO60";
         $producto8->descripcion = "NIPLICIMBRA TUBO 60 CM X 3MT LARGO";
         $producto8->unidadmedida = "MT";
-        $producto8->precio1 = 1;425.64;
+        $producto8->precio1 = 1425.64;
         $producto8->save();
 
         $producto9 = new Producto();

@@ -52,17 +52,10 @@ class PanelVentaController extends Controller
             'totalorden'=> 'required|regex:/^\d{1,10}(\.\d{0,3})?$/',
         ]);
 
-        /* dd($request); */
-        //$id = $request->idcliente;
-        //$razon = $request->razon_social;
-        //$rfc = $request->rfc;
         $productos = $request->productos;
         $unidadmedida = $request->unidadmedida;
         $precios = $request->precios;
         $cantidades = $request->cantidades;
-        //$subtotal=$request->subtotalorden;
-        //$iva=$request->iva;
-        //$total=$request->totalorden;
 
         $documento = new Documento();
         $documento->idcliente = $request->input('idcliente');
@@ -72,54 +65,15 @@ class PanelVentaController extends Controller
         $documento->iva = $request->input('iva');
         $documento->total = $request->input('totalorden');
         $documento->save();
-
-
-        //Convirtiendo Cantidades a String
-        //$newCantidadSpe =  implode ( "-" , $request->cantidad );
         
-       /*  $datasave = [
-        'id' => $id,
-        'razon' => $razon,
-        'rfc' => $rfc,
-        'productos' => $productos,
-        'medidas' => $medidas,
-        'precios' => $precios,
-        'cantidades' => $cantidades, 
-        'subtotal' => $subtotal,
-        'iva' => $iva,
-        'total' => $total
-        ]; */
-
-        //$idmateriales = [];
-        //$idmateriales = array_chunk($productos,1,true);
-        $ac = [];
-        for ($i=0; $i < count($productos); $i++) { 
-            array_push($ac,[$productos[$i],
-            'unidadmedida'=> $unidadmedida[$i], 
-            'cantidad'=> $cantidades[$i],
-            'precio1'=>   $precios[$i]
-                        ]);
+        $i=0;
+        foreach ($productos as $key => $value) {
+            $a = [$value => ['unidadmedida'=> $unidadmedida[$i],'cantidad'=> $cantidades[$i],'precio1'=>   $precios[$i]]];
+            $documento->productos()->attach($a);
+            $i++;
         }
-        /* for ($i=0; $i < count($productos); $i++) { 
-            array_push($ac, [$productos[$i],
-                            $medidas[$idmateriales[$i][$i]], 
-                            $cantidades[$idmateriales[$i][$i]],
-                            $precios[$idmateriales[$i][$i]]
-                        ]);
-        } */
-        
-        for ($i=0; $i < 1 ; $i++) { 
-            $documento->productos()->attach([ 
-                'idmaterial'=> $productos[$i],
-                'unidadmedida'=> $unidadmedida[$i], 
-            'cantidad'=> $cantidades[$i],
-            'precio1'=>   $precios[$i]
-        ]);
-        }
-        //print_r($ac);
-        //return $ac[0][2];
-        //return redirect()->route('venta.panelventa_c.index');
-
+        return redirect()->route('venta');
+    
     }
 
     /**
