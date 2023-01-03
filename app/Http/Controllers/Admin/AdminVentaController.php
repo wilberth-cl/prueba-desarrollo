@@ -28,7 +28,11 @@ class AdminVentaController extends Controller
     }
 
     public function reportePorCliente(){
-        $productos = Documento::with('cliente')->get();
-        return view('admin.ventas_v.reporte_clientes', compact('productos'));
+        $clientes = Documento::with('cliente:idcliente,rfc,razon_social')->select('idcliente')->distinct()->get();
+        $gruposclientes = DB::table('documentos')
+        ->select('idcliente',DB::raw('SUM(subtotal) as subtotal_cliente'),DB::raw('SUM(iva) as iva_cliente'),DB::raw('SUM(total) as total_cliente'))
+        ->groupBy('idcliente')
+        ->get();
+        return view('admin.ventas_v.reporte_clientes', compact('gruposclientes','clientes'));
     }
 }

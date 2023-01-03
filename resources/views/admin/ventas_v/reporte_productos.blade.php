@@ -44,7 +44,7 @@
 
                                     @if ($producto->idmaterial == $grupo->idmaterial)
                                         <td>{{ $grupo->cantidad_prod }}</td>
-                                        <td>$ {{ $grupo->subtotal_prod }}</td>
+                                        <td>${{ $grupo->subtotal_prod }}</td>
                                     @endif
                                     
                                 @endforeach

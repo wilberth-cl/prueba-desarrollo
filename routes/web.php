@@ -44,7 +44,9 @@ Route::get('/admin',[HomeAdminController::class,'index'])->name('admin');
 Route::resource('admin/panel-admin',PanelAdminController::class)->names('admin.paneladmin_c');
 
 //REPORTE POR PRODCUTO
-Route::get('admin/reporte-por-producto',[AdminVentaController::class,'reportePorProductos'])->name('admin.reporte-productos_c');
+Route::get('admin/reporte-por-productos',[AdminVentaController::class,'reportePorProductos'])->name('admin.reporte-productos_c');
+//REPORTE POR CLIENTE
+Route::get('admin/reporte-por-clientes',[AdminVentaController::class,'reportePorCliente'])->name('admin.reporte-clientes_c');
 
 //PRODUCTOS
 /* Route::get('admin/producto', [AdminProductoController::class.'index']); */
