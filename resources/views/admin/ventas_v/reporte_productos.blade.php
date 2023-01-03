@@ -1,5 +1,5 @@
 @extends('template.admin')
-@section('titulopagina', 'Reporte | Producto')
+@section('titulopagina', 'Reporte | Productos')
 @section('estilos')
 @endsection
 @section('scripts')
@@ -22,7 +22,40 @@
 
             <div class="col-md-12">
                 <!-- TABLA-PRODUCTO -->
-                {{ $productos }}
+                <table class="table table-sm table-hover">
+                    
+                    <thead class="table-dark">
+                        <tr>
+                           <th>IDMATERIAL</th>
+                           <th>DESCRIPCION</th>
+                           <th>TOTAL DE PIEZAS VENDIDAS</th>
+                           <th>SUBTOTAL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach ($collectproductos as $productos)
+                            @foreach ($productos as $producto)
+                            <tr>
+                                <td>{{ $producto->idmaterial }}</td>
+                                <td>{{ $producto->descripcion }}</td>
+                            
+                                @foreach ($grupos as $grupo)
+
+                                    @if ($producto->idmaterial == $grupo->idmaterial)
+                                        <td>{{ $grupo->cantidad_prod }}</td>
+                                        <td>$ {{ $grupo->subtotal_prod }}</td>
+                                    @endif
+                                    
+                                @endforeach
+                                
+                            </tr>
+                            @endforeach
+                        @endforeach
+                      
+                    </tbody>
+                    
+                </table>
                 <!-- Fin TABLA-PRODUCTO -->
               </div>
 

@@ -10,13 +10,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
@@ -49,6 +42,24 @@
                         </li>
                         <li><a href="{{ route('admin.cliente_c.create') }}" class="dropdown-item">
                                 Nuevo Cliente
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Reportes
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="{{ route('admin.reporte-productos_c') }}" class="dropdown-item">
+                                Por Productos
+                            </a>
+                        </li>
+                        <li><a href="{{ route('admin.cliente_c.create') }}" class="dropdown-item">
+                                Por Cliente
                             </a>
                         </li>
                     </ul>
