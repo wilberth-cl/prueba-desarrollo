@@ -58,7 +58,7 @@
                                 Por Productos
                             </a>
                         </li>
-                        <li><a href="{{ route('admin.cliente_c.create') }}" class="dropdown-item">
+                        <li><a href="{{ route('admin.reporte-clientes_c') }}" class="dropdown-item">
                                 Por Cliente
                             </a>
                         </li>
