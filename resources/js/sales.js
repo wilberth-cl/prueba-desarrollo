@@ -211,6 +211,22 @@ $(document).ready(function () {
 
 
 
+    /**---------------------------------------------------
+     * 
+     * SHOPPING CART => Confirmar Enviar Carrito(1.1)
+     * 
+     *---------------------------------------------------*/
+    $('button.ordenarcartshopping[type=submit]').click(function (event) {
+        let confirmsubmit = confirm("¡Confirmar Compra!");
+        if(confirmsubmit){
+            return true;
+        }else{
+            return false;
+        }
+    });
+
+
+
 
     /**-------------------------------------------------------
      * 
@@ -225,11 +241,11 @@ $(document).ready(function () {
             .then(function (response) {
                 /* console.log(response); */
                 html = '<tr class="trproducto">';
-                html += '<td class="tdformattable"><input id="producto-' + idmaterial + '" type="text"   style="width:100%;" name="productos[]" value="' + idmaterial + '" readonly></td>';
-                html += '<td class="tdformattable"><input id="medida-' + idmaterial + '" type="text"   style="width:100%;" name="unidadmedida[]" value="' + response.data[0].unidadmedida + '" readonly></td>';
-                html += '<td class="tdformattable"><input id="precio-' + idmaterial + '" type="number" style="width:100%;" name="precios[]" value="' + response.data[0].precio1 + '" readonly></td>';
-                html += '<td class="tdformattable"><input id="cantidad-' + idmaterial + '" class="modificarcantidad" type="number" style="width:100%; min="0" step="1" name="cantidades[]" value="' + cantdefault + '" ></td>';
-                html += '<td class="tdformattable"><input id="subtotal-' + idmaterial + '" class="modificarsubtotal" type="number" style="width:100%;"   value="' + (cantdefault * response.data[0].precio1) + '" readonly></td>';
+                html += '<td class="tdformattable"><input id="producto-' + idmaterial + '" type="text" class="border border-0" style="width:100%;" name="productos[]" value="' + idmaterial + '" readonly onfocus="blur()"></td>';
+                html += '<td class="tdformattable"><input id="medida-' + idmaterial + '" type="text" class="border border-0" style="width:100%;" name="unidadmedida[]" value="' + response.data[0].unidadmedida + '" readonly onfocus="blur()"></td>';
+                html += '<td class="tdformattable"><input id="precio-' + idmaterial + '" type="number" class="border border-0" style="width:100%;" name="precios[]" value="' + response.data[0].precio1 + '" readonly onfocus="blur()"></td>';
+                html += '<td class="tdformattable"><input id="cantidad-' + idmaterial + '" class="modificarcantidad border border-0 text-bg-light text-center" type="number" style="width:100%; min="0" step="1" name="cantidades[]" value="' + cantdefault + '" autocomplete="off"></td>';
+                html += '<td class="tdformattable"><input id="subtotal-' + idmaterial + '" class="modificarsubtotal border border-0 text-center" type="number" value="' + (cantdefault * response.data[0].precio1) + '" readonly onfocus="blur()"></td>';
                 html += '<td class="tdformattable"><input type="button" id="remove-' + idmaterial + '" class="btn btn-danger removerproductodelalista" style="width:100%;" value="x"></td>';
                 html += '</tr>';
                 $('tbody#tbodyaddproducto').append(html); 
@@ -254,8 +270,14 @@ $(document).ready(function () {
     *               => DESABLED LOS PRODUCTOS YA AGREGADOS
     * 
     *---------------------------------------------------------------------*/
-    $('.soldproducto').click(function (event) {
+    $(document).on('click','.soldproducto',function (event) {
         //console.log(event.target.id);
+        $('button.formoffcanvas[type=button]').attr("disabled", false);
+        let id = event.target.id;
+        $('.btn' + id).attr("disabled", true);
+        $('.btn' + id).text("en el carrito");
+        addProductoCar(id);
+        $('button.formoffcanvas[type=button]').trigger('click');
     });
 
     $(document).on('click', '.addproducto', function (event) {
@@ -336,7 +358,7 @@ $(document).ready(function () {
         } else {
             let precioprod = $('input#precio-' + id).val();
             let subtot = (precioprod * candtarget);
-            $('input#subtotal-' + id).val(subtot);
+            $('input#subtotal-' + id).val(Number(parseFloat(subtot).toFixed(3)));;
             calculadoraOrden();
         }
     });
@@ -372,11 +394,13 @@ $(document).ready(function () {
         (rows > 0) ? (
             $('span.numerodearticulosseleccionados').remove(),
             $('button.formoffcanvas[type=button]').append('<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger numerodearticulosseleccionados">' + rows + '</span>'),
-            $('button.formoffcanvas[type=button]').attr("disabled", false)
+            $('button.formoffcanvas[type=button]').attr("disabled", false),
+            $('button.ordenarcartshopping[type=submit]').attr("disabled",false)
         ) : (
             $('span.numerodearticulosseleccionados').remove(),
             $('button.formoffcanvas[type=button]').append('<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger numerodearticulosseleccionados">vacío</span>'),
-            $('button.formoffcanvas[type=button]').attr("disabled", true)
+            $('button.formoffcanvas[type=button]').attr("disabled", true),
+            $('button.ordenarcartshopping[type=submit]').attr("disabled",true)
         )
     };
 
