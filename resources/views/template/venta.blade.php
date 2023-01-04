@@ -187,6 +187,9 @@
            /*  document.querySelector('#loader').setAttribute('hidden',true); */
         });
     </script>
+    <!-- Fontawesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+    
 
        <!-- Include: Typeahaed --->
        {{-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script> --}}

@@ -3,9 +3,8 @@
     <!-- <nav class="navbar navbar-expand-lg" style="background-color: #fdb424;"> -->
     <div class="container-fluid">
         <a class="navbar-brand fs-4 mx-3" href="#">Ventas</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -19,14 +18,16 @@
 
 
             <div class="d-flex" role="search">
-                <label for="search">Productos:&nbsp;</label><input id="searchqueryproducto" class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                <label for="search">Productos:&nbsp;</label><input id="searchqueryproducto" class="form-control me-2"
+                    type="search" placeholder="Buscar" aria-label="Search">
                 <button id="searchproducto" class="btn btn-outline-success" type="button">Buscar</button>
             </div>
 
 
             <div class="px-5">
-                <button class="btn btn-light formoffcanvas position-relative" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                    <img src="{{ asset('build/icon/cart-shopping-solid.svg') }}" height="20" width="20">
+                <button id="formoffcanvass" class="btn btn-light formoffcanvas position-relative" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                    <i class="fas fa-shopping-cart h-auto w-5 text-primary"></i>
                 </button>
             </div>
         </div>
