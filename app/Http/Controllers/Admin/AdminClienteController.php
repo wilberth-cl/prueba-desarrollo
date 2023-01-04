@@ -50,7 +50,9 @@ class AdminClienteController extends Controller
         $client->rfc          = $request->input('rfc');
         $client->save();
 
-        return to_route('admin.cliente_c.index')->with('datos','¡Agregado Correntamente!');;
+        session()->flash('datos','¡Agregado Correntamente!');
+
+        return to_route('admin.cliente_c.index');
     }
 
     /**

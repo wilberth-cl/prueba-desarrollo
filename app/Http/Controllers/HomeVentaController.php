@@ -11,6 +11,6 @@ class HomeVentaController extends Controller
      */
     public function index()
     {
-        return redirect()->route('venta.panelventa_c.index');
+        return to_route('venta.panelventa_c.index');
     }
 }
