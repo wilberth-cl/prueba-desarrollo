@@ -1,6 +1,7 @@
 import '../js/bootstrap';
 import '../js/jquery.js';
 import '../js/typeahead.js';
-import '../css/app.css'
+import '../css/app.css';
 import '../js/sales.js';
-import * as bootstrap from 'bootstrap'
+import '../js/admin.js';
+import * as bootstrap from 'bootstrap';

@@ -11,7 +11,7 @@ class HomeAdminController extends Controller
      */
     public function index()
     {
-        return redirect()->route('admin.paneladmin_c.index');
+        return to_route('admin.paneladmin_c.index');
     }
 
 

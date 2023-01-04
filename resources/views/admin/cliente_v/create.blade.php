@@ -9,46 +9,7 @@
 </style>
 @endsection
 @section('scripts')
-<script>
-$(document).ready(function(){
-    $("#razon_social").on("keyup", function(event){
-        id = event.target.id
-
-        var razon_social =  $(this).val();
-      console.log(razon_social);
-      /* let regex = /^\d{1,13}(\.\d{0,3})?$/;
-      let passed = razon_social.match(regex); */
-      var regex = /^([a-zA-Z\&ñÑäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙ\s\.\']([a-zA-Z\&ñÑäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚàèìòùÀÈÌÒÙ\s\.\']){1,59})?$/.test(razon_social);
-      //console.log(passed);
-      if(!regex){
-        $(this).css("border","1px solid red");
-      }else{
-        $(this).val(razon_social);
-        $(this).css("border","1px solid lightsteelblue");
-      }
-    });
-
-    $("#rfc").on("keyup", function(){
-      var nombre = $(this).val();
-      var nombreproces = nombre
-                  .toUpperCase()
-                  .trim()
-                  .replace(/["']/g, "")
-                  //.replace(/ /g, '-')  //remplazar por guiones
-                  //.replace(/&/g, '-and-') //remplazar & con and
-                  .normalize("NFD")       // sin acetos
-                  .replace(/[\s\W_-]+/g, "") // Replace spaces, non-word characters and dashes with a single dash (-)
-                  .replace(/-$/, ''); // Remove last floating dash if exists
-      document.getElementById("rfc").value=nombreproces;
-      if(nombre.length===15){
-        $(this).css("border","1px solid lightsteelblue");
-      }else{
-        $(this).css("border","1px solid red");
-      }
-    });
-
-});
-</script>
+<script></script>
 @endsection
 
 @section('contenido')
@@ -63,7 +24,7 @@ $(document).ready(function(){
     @csrf
 
         <div class="card-header encabezado">
-            <div class="card-title">Realiza los cambios al cliente</div>
+            <div class="card-title">Agregar nuevo al cliente</div>
         </div>
         <!-- /.card-header -->
 

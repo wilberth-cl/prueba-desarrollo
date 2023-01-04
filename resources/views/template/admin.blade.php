@@ -121,6 +121,15 @@
 
         </div>
 
+
+        <div class="row">
+
+        @include('custom.peticion_eliminar')
+  
+        </div>
+
+
+
         <div class="row justify-content-md-center">
 
             <!-- Para Mostrar Mensajes de Con la llave With 'datos'  -->
@@ -177,7 +186,7 @@
 
 
 
-     <script type="text/javascript">
+     <script type="module">
         $(document).ready(function () {
             window.setTimeout(function() {
                 $(".alert").fadeOut(1500).slideUp(1000, function(){
