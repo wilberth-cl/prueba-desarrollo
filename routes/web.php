@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\PanelAdminController;
 use App\Http\Controllers\Venta\PanelVentaController;
 use App\Http\Controllers\HomeAdminController;
 use App\Http\Controllers\HomeVentaController;
+use App\Http\Controllers\PDFController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,12 +21,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/* Route::get('/prueba', function(){
-    return view('prueba');
-}); */
-Route::get('/prueba', [PanelVentaController::class,'venta'])->name('prueba');
-
-Route::get('/add', [PanelVentaController::class,'pruebassold'])->name('add');
+//Route::get('/prueba', [PanelVentaController::class,'pruebas'])->name('prueba');
 
 /* Route::get('/productos', function(){
     $prod = Producto::all();
@@ -56,19 +52,17 @@ Route::resource('admin/producto', AdminProductoController::class)->names('admin.
 /* Route::get('admin/producto', [AdminProductoController::class.'index']); */
 Route::resource('admin/cliente', AdminClienteController::class)->names('admin.cliente_c');
 
-
-
-
 //CANCELACIONES
 Route::get('cancelar/{ruta}', function ($ruta) {
     return redirect()->route($ruta)->with('cancelar', '¡Cancelado correntamente!');
 })->name('cancelar');
 
-/* Route::get('/admin', function () {
-    return view('template.admin');
-}); */
+//GENERAR PDF
+Route::get('generate-pdf-clientes', [PDFController::class, 'generarPDFClientes'])->name('descargar-pdf-clientes');
+Route::get('generate-pdf-reporteporclientes', [PDFController::class, 'generarPDFReportePorClientes'])->name('descargar-pdf-reporteporclientes');
+Route::get('generate-pdf-reporteporproductos', [PDFController::class, 'generarPDFReportePorProductos'])->name('descargar-pdf-reporteporproductos');
 
-
+//ENTRADA
 Route::get('/', function () {
     return view('welcome');
 });

@@ -13,8 +13,9 @@
 
     <div class="card mt-2 text-center shadow-sm" style="border-radius: 0px;">
 
-        <div class="card-header encabezado">
-            <div class="card-title">Reporte por Clientes</div>
+        <div class="card-header d-flex justify-content-center">
+            <div class="card-title encabezado mx-auto">Reporte por Clientes</div>
+            <a class="btn btn-primary m-1" href="{{ route('descargar-pdf-reporteporclientes') }}">Exportar PDF</a>
         </div>
         <!-- /.card-header -->
 
