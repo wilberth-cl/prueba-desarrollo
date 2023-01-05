@@ -121,51 +121,8 @@ class PanelVentaController extends Controller
         //
     }
 
-    public function venta(Request $request){
-        /* dd($request); */
-        $id = $request->idcliente;
-        $razon = $request->razon_social;
-        $rfc = $request->rfc;
-        $productos = $request->productos;
-        $medidas = $request->medidas;
-        $precios = $request->precios;
-        $cantidades = $request->cantidades;
-        $subtotal=$request->subtotalorden;
-        $iva=$request->iva;
-        $total=$request->totalorden;
 
-
-        //Convirtiendo Cantidades a String
-        //$newCantidadSpe =  implode ( "-" , $request->cantidad );
-        
-        $datasave = [
-        'id' => $id,
-        'razon' => $razon,
-        'rfc' => $rfc,
-        /* 'productos' => $productos,
-        'medidas' => $medidas,
-        'precios' => $precios,
-        'cantidades' => $cantidades, */
-        'subtotal' => $subtotal,
-        'iva' => $iva,
-        'total' => $total
-        ];
-
-        $idmateriales = [];
-        $idmateriales = array_chunk($productos,1,true);
-        $ac = [];
-        for ($i=0; $i < count($productos); $i++) { 
-            array_push($ac, [$productos[$i],
-                            $medidas[$idmateriales[$i][$i]], 
-                            $cantidades[$idmateriales[$i][$i]],
-                            $precios[$idmateriales[$i][$i]]
-                        ]);
-        }
-
-        return [$datasave, $ac];
-    }
-
-    public function pruebassold(){
+    public function pruebas(){
         return view('prueba');
     }
 

@@ -44,6 +44,10 @@
                                 Nuevo Cliente
                             </a>
                         </li>
+                        <li><a href="{{ route('descargar-pdf-clientes') }}" class="dropdown-item">
+                            Descargar PDF
+                        </a>
+                    </li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
