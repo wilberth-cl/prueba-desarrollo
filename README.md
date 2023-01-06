@@ -57,15 +57,6 @@ php artisan key:generate
 ````
 #
 #
-# ready!
-````
-npm run dev ó npm run build
-````
-````
-php artisan serve
-````
-#
-#
 # **_Empecemos:_**
 ### El proyecto contiene dos seeders para comenzar.
 > ProductoSeeder y ClienteSeeder
@@ -77,6 +68,15 @@ php artisan migrate --seed
 * otras veces:
 ````
 php artisan migrate:fresh --seed
+````
+#
+#
+# ready!
+````
+npm run dev ó npm run build
+````
+````
+php artisan serve
 ````
 
 
