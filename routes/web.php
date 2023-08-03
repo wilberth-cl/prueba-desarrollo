@@ -59,6 +59,7 @@ Route::get('cancelar/{ruta}', function ($ruta) {
 
 //GENERAR PDF
 Route::get('generate-pdf-clientes', [PDFController::class, 'generarPDFClientes'])->name('descargar-pdf-clientes');
+Route::get('generate-pdf-productos', [PDFController::class, 'generarPDFProductos'])->name('descargar-pdf-productos');
 Route::get('generate-pdf-reporteporclientes', [PDFController::class, 'generarPDFReportePorClientes'])->name('descargar-pdf-reporteporclientes');
 Route::get('generate-pdf-reporteporproductos', [PDFController::class, 'generarPDFReportePorProductos'])->name('descargar-pdf-reporteporproductos');
 

@@ -1,3 +1,5 @@
+@import './loading.css';
+
 body {
     background-color: skyblue;
 }
@@ -30,3 +32,4 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   --moz-appearance: textfield;
 }
+

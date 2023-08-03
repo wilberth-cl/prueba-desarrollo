@@ -35,7 +35,7 @@
                 <div class="card-body">
                   <h5 class="card-title">Clientes</h5>
                   <p class="card-text">Actualmente se encuentran registrados: &nbsp; {{ $clientes ?? '0'  }} &nbsp; Clientes.</p>
-                  <a href="#" class="btn btn-primary">Administrar Clientes</a>
+                  <a href="{{ route('admin.cliente_c.index') }}" class="btn btn-primary">Administrar Clientes</a>
                 </div>
               </div>
             </div>

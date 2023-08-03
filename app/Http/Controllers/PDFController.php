@@ -10,10 +10,22 @@ use Illuminate\Support\Facades\DB;
 
 class PDFController extends Controller
 {
+    public function generarPDFProductos()
+    {
+        $productos = Producto::all();
+        $tituloreporte = 'Reporte: Productos.';
+        $fechahora = 'Fecha y hora: '.now();
+
+        PDF::setOption(['dpi' => 150]);
+        $pdf = PDF::loadView('reportes.generar_pdf_productos', compact('productos','tituloreporte','fechahora'));
+       
+        return $pdf->download('productos.pdf');
+    }
+
     public function generarPDFClientes()
     {
         $clientes = Cliente::all();
-        $tituloreporte = 'Reporte por: Clientes.';
+        $tituloreporte = 'Reporte: Clientes.';
         $fechahora = 'Fecha y hora: '.now();
 
         PDF::setOption(['dpi' => 150]);
@@ -38,7 +50,7 @@ class PDFController extends Controller
     }
 
      public function generarPDFReportePorProductos(){
-        $tituloreporte = 'Reporte Ventas por: Clientes.';
+        $tituloreporte = 'Reporte Ventas por: Productos.';
         $fechahora = 'Fecha y hora: '.now();
 
         
